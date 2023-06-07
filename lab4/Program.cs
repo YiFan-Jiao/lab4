@@ -90,20 +90,26 @@ foreach (string num in inputOrderList)
 {
     orderList.Add(int.Parse(num));
 }
-
-for (int i = 0; i < orderList.Count - 1; i++)
+List<int> OrderByLooping(List<int> list)
 {
-    for (int j = 0; j < orderList.Count - 1 - i; j++)
+    for (int i = 0; i < list.Count - 1; i++)
     {
-        if (orderList[j] > orderList[j + 1])
+        for (int j = 0; j < list.Count - 1 - i; j++)
         {
-            int temp = orderList[j + 1];
-            orderList[j + 1] = orderList[j];
-            orderList[j] = temp;
+            if (list[j] > list[j + 1])
+            {
+                int temp = list[j + 1];
+                list[j + 1] = list[j];
+                list[j] = temp;
+            }
         }
     }
+    return list;
 }
-foreach (int i in orderList)
+
+List<int> lastList = OrderByLooping(orderList);
+
+foreach (int i in lastList)
 {
     Console.Write($"{i} ");
 }
