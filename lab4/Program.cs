@@ -106,9 +106,7 @@ List<int> OrderByLooping(List<int> list)
     }
     return list;
 }
-
 List<int> lastList = OrderByLooping(orderList);
-
 foreach (int i in lastList)
 {
     Console.Write($"{i} ");
