@@ -1,6 +1,4 @@
 ﻿//Question 1
-using System.Diagnostics;
-
 Console.WriteLine("Question 1");
 Console.WriteLine("How many lists you want?");
 int listNum = int.Parse(Console.ReadLine()); 
